@@ -1,14 +1,14 @@
+import { getNotes } from "@/data/demo.notes";
 import { createFileRoute } from "@tanstack/react-router";
-import { getPunkSongs } from "@/data/demo.punk-songs";
 
 export const Route = createFileRoute("/demo/start/ssr/data-only")({
 	ssr: "data-only",
 	component: RouteComponent,
-	loader: async () => await getPunkSongs(),
+	loader: async () => await getNotes(),
 });
 
 function RouteComponent() {
-	const punkSongs = Route.useLoaderData();
+	const notes = Route.useLoaderData();
 
 	return (
 		<div
@@ -20,18 +20,20 @@ function RouteComponent() {
 		>
 			<div className="w-full max-w-2xl rounded-xl border-8 border-black/10 bg-black/50 p-8 shadow-xl backdrop-blur-md">
 				<h1 className="mb-6 font-bold text-3xl text-pink-400">
-					Data Only SSR - Punk Songs
+					Data Only SSR - Notes
 				</h1>
 				<ul className="space-y-3">
-					{punkSongs.map((song) => (
+					{notes.map((note) => (
 						<li
-							key={song.id}
+							key={note.id}
 							className="rounded-lg border border-white/20 bg-white/10 p-4 shadow-md backdrop-blur-sm"
 						>
 							<span className="font-medium text-lg text-white">
-								{song.name}
+								{note.title}
 							</span>
-							<span className="text-white/60"> - {song.artist}</span>
+							<span className="text-white/60"> - {note.content}</span>
+							<span className="text-white/60"> - {note.createdAt}</span>
+							<span className="text-white/60"> - {note.updatedAt}</span>
 						</li>
 					))}
 				</ul>

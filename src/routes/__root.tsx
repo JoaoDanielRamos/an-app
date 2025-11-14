@@ -1,5 +1,6 @@
-import Footer from "@/components/Layout/Footer";
 import Header from "@/components/Layout/Header";
+import MobileNavigation from "@/components/Layout/MobileNavigation";
+import NotFound from "@/components/Layout/NotFound";
 import { TanStackDevtools } from "@tanstack/react-devtools";
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
@@ -16,7 +17,7 @@ export const Route = createRootRoute({
 				content: "width=device-width, initial-scale=1",
 			},
 			{
-				title: "TanStack Start Starter",
+				title: "Notes",
 			},
 		],
 		links: [
@@ -41,6 +42,7 @@ export const Route = createRootRoute({
 	}),
 
 	shellComponent: RootDocument,
+	notFoundComponent: NotFound,
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -51,8 +53,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
 			</head>
 			<body>
 				<Header />
-				{children}
-				<Footer />
+				<main className="max-lg:pb-16">{children}</main>
+				<MobileNavigation />
 				<TanStackDevtools
 					config={{
 						position: "bottom-right",
