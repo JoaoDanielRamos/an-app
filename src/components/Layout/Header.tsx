@@ -1,10 +1,3 @@
-const love = "❤️";
-
 export default function Header() {
-	return (
-		<header className="table text-foreground">
-			Header {love}
-			<p className="text-xs">test</p>
-		</header>
-	);
+	return <header className="font-bold text-foreground">Notes</header>;
 }
