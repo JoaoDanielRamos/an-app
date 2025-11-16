@@ -31,9 +31,16 @@
     "editor.defaultFormatter": "biomejs.biome",
     "editor.formatOnSave": true
   },
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
+  },
+  "[tailwindcss]": {
+    "editor.defaultFormatter": "biomejs.biome",
+    "editor.formatOnSave": true
+  },
   "files.associations": {
-    "*.css": "tailwindcss",
-    "*.scss": "tailwindcss"
+    "*.css": "tailwindcss"
   },
   "tailwindCSS.includeLanguages": {
     "html": "html",
