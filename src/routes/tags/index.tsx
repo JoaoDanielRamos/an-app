@@ -14,7 +14,11 @@ function RouteComponent() {
     <div>
       <div className="flex flex-wrap gap-2 p-4">
         {tags.map((tag) => (
-          <Link to={`/tags/${tag}` as any} key={tag}>
+          <Link
+            to={`/tags/${tag}` as any}
+            key={tag}
+            viewTransition={{ types: ["slide-left"] }}
+          >
             <Badge
               key={tag}
               className="font rounded-sm bg-zinc-200 font-medium text-zinc-600"

@@ -10,7 +10,11 @@ export default function Note({ note }: { note: NoteType }) {
   const tags = (
     <div className="flex gap-1">
       {note.tags.map((tag) => (
-        <Link to={`/tags/${tag}` as any} key={tag}>
+        <Link
+          to={`/tags/${tag}` as any}
+          key={tag}
+          viewTransition={{ types: ["slide-left"] }}
+        >
           <Badge className="rounded-sm bg-zinc-200 text-zinc-600">{tag}</Badge>
         </Link>
       ))}
@@ -31,10 +35,15 @@ export default function Note({ note }: { note: NoteType }) {
       </Badge>
     </div>
   );
+
   const noteId = note.id.toString();
 
   return (
-    <Link to={`/notes/${noteId}` as any} className="block space-y-2 p-4">
+    <Link
+      to={`/notes/${noteId}` as any}
+      className="block space-y-2 p-4"
+      viewTransition={{ types: ["slide-left"] }}
+    >
       {title}
       {tags}
       {createdAt}
