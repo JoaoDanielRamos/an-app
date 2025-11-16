@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "title": "The Joy of Coffee at 3 AM",
+    "tags": ["lifestyle", "caffeine"],
+    "content": "There's something magical about brewing coffee in the dead of night. The silence amplifies every sound - the kettle's whistle, the pour, the first sip. It's a ritual that transforms insomnia into a meditative experience.",
+    "createdAt": "2021-01-01",
+    "updatedAt": "2021-01-15",
+    "archived": false
+  },
+  {
+    "id": 2,
+    "title": "Why Debugging is Like Detective Work",
+    "tags": ["tech", "programming", "debugging"],
+    "content": "Spent 3 hours hunting a bug today. Turns out it was a missing semicolon in a 2000-line file. The process reminded me of Sherlock Holmes - following clues, eliminating impossibilities, and that eureka moment when everything clicks. Console.log() is my magnifying glass.",
+    "createdAt": "2023-05-12",
+    "updatedAt": "2023-05-12",
+    "archived": true
+  },
+  {
+    "id": 3,
+    "title": "Messi's Goal Against Getafe: A Masterpiece",
+    "tags": ["soccer", "football", "messi", "barcelona"],
+    "content": "Watching that 2007 Getafe goal again. He picks up the ball at midfield, dribbles past 5 players like they're training cones, rounds the keeper, and slots it home. It's a carbon copy of Maradona's '86 World Cup goal. Some things transcend the sport itself - this is pure art.",
+    "createdAt": "2024-03-20",
+    "updatedAt": "2024-03-20",
+    "archived": false
+  },
+  {
+    "id": 4,
+    "title": "Kyoto in Cherry Blossom Season",
+    "tags": ["travel", "japan", "nature"],
+    "content": "Just booked tickets for April! The Philosopher's Path during sakura season is supposedly breathtaking - a 2km canal lined with hundreds of cherry trees. Plan to visit Fushimi Inari at dawn to avoid crowds, then spend afternoons in traditional tea houses. Can't wait to experience hanami.",
+    "createdAt": "2024-01-08",
+    "updatedAt": "2024-02-14",
+    "archived": false
+  },
+  {
+    "id": 5,
+    "title": "The Surprisingly Deep Philosophy of Sourdough",
+    "tags": ["cooking", "philosophy", "bread"],
+    "content": "Started my sourdough starter 3 weeks ago. Named it Carl. You learn patience with sourdough - you can't rush fermentation. It's a living thing that requires attention, care, and respect. Modern life wants everything instant, but Carl reminds me that good things take time. Also, my apartment smells amazing.",
+    "createdAt": "2023-09-03",
+    "updatedAt": "2023-09-25",
+    "archived": true
+  },
+  {
+    "id": 6,
+    "title": "TypeScript Generics Finally Clicked",
+    "tags": ["tech", "typescript", "learning"],
+    "content": "After months of copy-pasting generic types without understanding them, it finally makes sense! They're like function parameters but for types. Mind blown. Refactored an entire API client today using proper generics - cut the code by 40% and eliminated type assertions. Why didn't anyone explain it this way before?",
+    "createdAt": "2024-06-18",
+    "updatedAt": "2024-06-18",
+    "archived": false
+  },
+  {
+    "id": 7,
+    "title": "Tactical Evolution: The False 9 Revolution",
+    "tags": ["soccer", "tactics", "analysis"],
+    "content": "Been studying how Guardiola's false 9 changed football forever. Messi dropping deep created numerical superiority in midfield while wingers Villa and Pedro attacked the space behind. Defenses didn't know whether to follow or hold position. It's chess on grass. Modern formations like 3-2-5 in possession are descendants of this innovation.",
+    "createdAt": "2023-11-29",
+    "updatedAt": "2024-01-10",
+    "archived": false
+  },
+  {
+    "id": 8,
+    "title": "Hiking the Inca Trail: Lessons Learned",
+    "tags": ["travel", "hiking", "peru", "adventure"],
+    "content": "Day 2 almost broke me - Dead Woman's Pass at 4,215m. Altitude sickness is real. But watching sunrise over Machu Picchu after 4 days of trekking? Worth every painful step. Pro tip: bring more electrolyte packets than you think you need, break in your boots for at least 50km before going, and embrace the coca tea.",
+    "createdAt": "2022-08-15",
+    "updatedAt": "2022-08-30",
+    "archived": true
+  },
+  {
+    "id": 9,
+    "title": "Why Docker Compose Changed My Dev Life",
+    "tags": ["tech", "devops", "docker", "productivity"],
+    "content": "Remember spending hours setting up local databases, Redis, Elasticsearch, and prayer? Now it's 'docker-compose up' and I have a complete environment in 30 seconds. New dev onboarding went from 2 days to 20 minutes. It's not perfect - occasional networking gremlins - but it's the closest thing to magic I've found in dev tooling.",
+    "createdAt": "2024-02-07",
+    "updatedAt": "2024-02-07",
+    "archived": false
+  },
+  {
+    "id": 10,
+    "title": "The Art of Airport Layovers",
+    "tags": ["travel", "tips", "airports"],
+    "content": "After 50+ flights, I've mastered the layover. Singapore Changi: movie theater and butterfly garden. Seoul Incheon: free showers and Korean spa. Amsterdam Schiphol: Rijksmuseum annex with real Rembrandts. A 6-hour layover isn't a curse - it's a mini-vacation. Pack an empty water bottle, noise-canceling headphones, and a flexible mindset.",
+    "createdAt": "2023-12-05",
+    "updatedAt": "2024-01-22",
+    "archived": false
+  },
+  {
+    "id": 11,
+    "title": "React Server Components: The Future is Here",
+    "tags": ["tech", "react", "web development"],
+    "content": "Finally wrapped my head around RSCs. They're not just about performance - they're about rethinking the client-server boundary. Being able to directly query databases in components feels wrong at first, but it's liberating. No more API routes for every little thing. The mental model shift is real though.",
+    "createdAt": "2024-04-15",
+    "updatedAt": "2024-04-20",
+    "archived": true
+  },
+  {
+    "id": 12,
+    "title": "My Morning Routine: A Year Later",
+    "tags": ["lifestyle", "habits", "productivity"],
+    "content": "One year of waking up at 5:30 AM. The first month was torture. Now? Best decision ever. Two hours of focused work before emails flood in. The secret: going to bed at 9:30 PM consistently, blackout curtains, and putting my phone in another room. The willpower isn't in the morning - it's the night before.",
+    "createdAt": "2024-03-01",
+    "updatedAt": "2024-03-01",
+    "archived": false
+  },
+  {
+    "id": 13,
+    "title": "When Ronaldo Met Juventus: UCL Magic",
+    "tags": ["soccer", "football", "champions league"],
+    "content": "That bicycle kick in 2018. Even Juventus fans stood and applauded. Ronaldo hanging in the air, meeting the cross perfectly. The stadium went silent, then erupted. It's moments like these that remind you why we love sports - they create memories that outlive results. And yes, Juve signed him that summer.",
+    "createdAt": "2023-07-08",
+    "updatedAt": "2023-07-08",
+    "archived": false
+  },
+  {
+    "id": 14,
+    "title": "Learning Rust: A JavaScript Developer's Journey",
+    "tags": ["tech", "rust", "programming", "learning"],
+    "content": "Fighting the borrow checker is humbling. JavaScript let me be lazy with memory. Rust forces you to think about ownership, lifetimes, and references. It's frustrating and enlightening. After 3 weeks, I finally wrote a CLI tool that doesn't crash. Small victory, but it feels like I've leveled up as a developer.",
+    "createdAt": "2024-05-22",
+    "updatedAt": "2024-06-10",
+    "archived": true
+  },
+  {
+    "id": 15,
+    "title": "Iceland in Winter: Worth the Cold",
+    "tags": ["travel", "iceland", "adventure", "nature"],
+    "content": "Northern lights at 2 AM from a hot spring. Surreal doesn't cover it. Green curtains dancing across the sky while you're warm in 40°C water and the air is -5°C. Also: driving the Ring Road in winter is terrifying. Black ice, sideways snow, and 4 hours of daylight. But those landscapes... another planet.",
+    "createdAt": "2023-02-18",
+    "updatedAt": "2023-02-25",
+    "archived": false
+  },
+  {
+    "id": 16,
+    "title": "Vim Motions: Finally Clicked",
+    "tags": ["tech", "tools", "productivity", "vim"],
+    "content": "Three months with Vim keybindings everywhere - VS Code, browser, terminal. My mouse is collecting dust. ciw, di\", ya{ - these feel like magic spells now. The learning curve is brutal, but once it clicks, going back to normal editing feels like moving through mud. My WPM is down but my editing efficiency is way up.",
+    "createdAt": "2024-07-30",
+    "updatedAt": "2024-08-15",
+    "archived": false
+  },
+  {
+    "id": 17,
+    "title": "Homemade Ramen: The 48-Hour Project",
+    "tags": ["cooking", "ramen", "food"],
+    "content": "Made ramen from scratch. Pork belly chashu marinated overnight, tonkotsu broth simmered for 12 hours (apartment smelled insane), hand-pulled noodles, soft-boiled eggs marinated in soy. Was it better than my local spot? Honestly, no. Was it worth it? Absolutely. The appreciation for the craft alone made every hour count.",
+    "createdAt": "2023-10-14",
+    "updatedAt": "2023-10-16",
+    "archived": true
+  },
+  {
+    "id": 18,
+    "title": "Git Rebase vs Merge: I Finally Have an Opinion",
+    "tags": ["tech", "git", "version control"],
+    "content": "Team was split on this. After 6 months of rebasing religiously, I get it now. Clean linear history is beautiful for code archaeology. But force pushing to shared branches caused pain. My take: rebase personal branches, merge for collaboration. And please, write better commit messages than 'fix stuff' - future you will be grateful.",
+    "createdAt": "2024-01-20",
+    "updatedAt": "2024-01-20",
+    "archived": false
+  },
+  {
+    "id": 19,
+    "title": "Tiki-Taka: Beauty and Boredom",
+    "tags": ["soccer", "tactics", "spain"],
+    "content": "Spain's 2010 World Cup: 1-0 victories playing keep-away. Possession for possession's sake drove critics mad. But that semi-final vs Germany? Pure poetry. 1000+ passes, Germany couldn't touch the ball. It's like watching a master class in control. Effective? Yes. Exciting? Depends on your philosophy of football.",
+    "createdAt": "2024-02-11",
+    "updatedAt": "2024-02-11",
+    "archived": false
+  },
+  {
+    "id": 20,
+    "title": "Meditation: The Practice I Kept Quitting",
+    "tags": ["lifestyle", "mindfulness", "mental health"],
+    "content": "Fifth time trying meditation, finally stuck. The trick? Stop trying to empty your mind. Thoughts will come - that's normal. Notice them, let them pass, return to breath. Headspace's analogy: you're sitting by a road watching cars (thoughts) drive by, not trying to stop traffic. 10 minutes daily for 2 months now. Anxiety down noticeably.",
+    "createdAt": "2024-08-05",
+    "updatedAt": "2024-10-12",
+    "archived": true
+  },
+  {
+    "id": 21,
+    "title": "New Zealand: Middle Earth is Real",
+    "tags": ["travel", "new zealand", "hiking", "nature"],
+    "content": "Did the Tongariro Alpine Crossing. 19.4km of volcanic landscape - emerald lakes, red craters, moon-like terrain. Every LOTR location you visit, you understand why Jackson chose this country. Milford Sound had me in tears. The Kiwi hospitality is real. Already planning return trip for South Island's glaciers.",
+    "createdAt": "2022-11-20",
+    "updatedAt": "2022-12-05",
+    "archived": true
+  },
+  {
+    "id": 22,
+    "title": "CSS Grid Finally Makes Sense",
+    "tags": ["tech", "css", "web development"],
+    "content": "Spent years avoiding Grid, comfortable with Flexbox. Then built a complex dashboard and Grid was 1/3 the code. Grid for 2D layouts, Flex for 1D - simple rule. grid-template-areas is criminally underrated - you literally draw your layout in code. Why did I wait so long to learn this properly?",
+    "createdAt": "2024-09-08",
+    "updatedAt": "2024-09-08",
+    "archived": false
+  },
+  {
+    "id": 23,
+    "title": "The Perfect Espresso: A Quest",
+    "tags": ["coffee", "lifestyle", "caffeine"],
+    "content": "Bought a proper espresso machine. Grind size, tamp pressure, water temp, extraction time - so many variables. Spent $800 on equipment, 100+ shots perfecting it. Friends think I'm insane. But that first perfect shot - 25 seconds, thick crema, balanced taste - justified everything. The rabbit hole is real but delicious.",
+    "createdAt": "2023-06-12",
+    "updatedAt": "2024-01-30",
+    "archived": false
+  },
+  {
+    "id": 24,
+    "title": "Postgres Over MongoDB: Lessons Learned",
+    "tags": ["tech", "databases", "backend"],
+    "content": "Migrated our app from Mongo to Postgres. Controversial decision, team was skeptical. Six months later? Best move we made. JSONB gives flexibility where needed, but relations and transactions saved us countless bugs. Turns out most 'scale' problems are query optimization problems. Plus, PostGIS for geo queries is incredible.",
+    "createdAt": "2024-03-18",
+    "updatedAt": "2024-06-22",
+    "archived": true
+  },
+  {
+    "id": 25,
+    "title": "Learning to Say No: A Career Turning Point",
+    "tags": ["career", "productivity", "boundaries"],
+    "content": "Used to say yes to everything. More projects, more meetings, more responsibilities. Burned out at 28. Started saying no. Felt guilty. Then something shifted - my yes became more valuable. Focus increased, work quality improved, stress decreased. No is a complete sentence. Protecting your time isn't selfish, it's necessary.",
+    "createdAt": "2024-07-14",
+    "updatedAt": "2024-07-14",
+    "archived": false
+  },
+  {
+    "id": 26,
+    "title": "Premier League: Why It's Different",
+    "tags": ["soccer", "football", "premier league"],
+    "content": "Watched Liverpool vs City at Anfield. The intensity is unreal - 90 minutes of full sprint. No winter break, fixtures every 3 days. La Liga has technique, Serie A has tactics, Bundesliga has passion, but the PL has relentless pace. Boxing Day fixtures are tradition meets chaos. It's exhausting just watching.",
+    "createdAt": "2023-12-28",
+    "updatedAt": "2023-12-28",
+    "archived": false
+  },
+  {
+    "id": 27,
+    "title": "Fermentation Station: Beyond Sourdough",
+    "tags": ["cooking", "fermentation", "food science"],
+    "content": "Started fermenting everything after sourdough success. Kimchi, sauerkraut, hot sauce, kombucha. My fridge is a science experiment. Learning about lactobacillus and wild yeasts. The patience factor carries over - you can't rush biology. Plus the health benefits and flavors you can't buy. Started a fermentation journal to track experiments.",
+    "createdAt": "2024-05-01",
+    "updatedAt": "2024-08-20",
+    "archived": true
+  },
+  {
+    "id": 28,
+    "title": "Async/Await: How I Stopped Worrying About Callbacks",
+    "tags": ["tech", "javascript", "async", "programming"],
+    "content": "Remember callback hell? Nested promises? Async/await turned asynchronous code into something readable. Try/catch blocks work naturally. Code reads top to bottom like synchronous code but doesn't block. It's syntactic sugar over promises but wow, what a difference. Teaching junior devs now - they'll never know the pain we endured.",
+    "createdAt": "2023-04-05",
+    "updatedAt": "2023-04-05",
+    "archived": false
+  },
+  {
+    "id": 29,
+    "title": "Patagonia Trek: El Chaltén to Fitz Roy",
+    "tags": ["travel", "hiking", "argentina", "nature"],
+    "content": "Laguna de los Tres at sunrise with Fitz Roy reflecting in the water. 8 hours of hiking, last hour straight uphill. Legs screaming, lungs burning. Then you crest the ridge and see it. The mountain glowing pink in dawn light. Everyone in our group was crying. Nature has this way of making you feel small and infinite at the same time.",
+    "createdAt": "2023-03-15",
+    "updatedAt": "2023-03-18",
+    "archived": false
+  },
+  {
+    "id": 30,
+    "title": "Clean Code: Refactoring Old Projects",
+    "tags": ["tech", "programming", "best practices"],
+    "content": "Revisited code I wrote 2 years ago. It works but it's a mess. Variable names like 'data2', functions doing 5 things, no tests. Spent a week refactoring. Uncle Bob was right - code should read like prose. Extract functions, meaningful names, single responsibility. It's twice as long but infinitely more maintainable. Past me was an optimistic fool.",
+    "createdAt": "2024-10-01",
+    "updatedAt": "2024-10-15",
+    "archived": true
+  }
+]

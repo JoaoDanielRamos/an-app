@@ -1,13 +1,13 @@
 import Note from "@/components/Note";
-import { getActiveNotes } from "@/data/demo.notes";
+import { getArchivedNotes } from "@/data/demo.notes";
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/")({
-  component: Home,
-  loader: async () => await getActiveNotes(),
+export const Route = createFileRoute("/archived")({
+  component: RouteComponent,
+  loader: async () => await getArchivedNotes(),
 });
 
-function Home() {
+function RouteComponent() {
   const notes = Route.useLoaderData();
 
   return (

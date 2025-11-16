@@ -9,7 +9,13 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SearchRouteImport } from './routes/search'
+import { Route as ArchivedRouteImport } from './routes/archived'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as TagsIndexRouteImport } from './routes/tags/index'
+import { Route as NotesIndexRouteImport } from './routes/notes/index'
+import { Route as TagsTagRouteImport } from './routes/tags/$tag'
+import { Route as NotesNoteIdRouteImport } from './routes/notes/$noteId'
 import { Route as DemoStartServerFuncsRouteImport } from './routes/demo/start.server-funcs'
 import { Route as DemoStartApiRequestRouteImport } from './routes/demo/start.api-request'
 import { Route as DemoApiNamesRouteImport } from './routes/demo/api.names'
@@ -18,9 +24,39 @@ import { Route as DemoStartSsrSpaModeRouteImport } from './routes/demo/start.ssr
 import { Route as DemoStartSsrFullSsrRouteImport } from './routes/demo/start.ssr.full-ssr'
 import { Route as DemoStartSsrDataOnlyRouteImport } from './routes/demo/start.ssr.data-only'
 
+const SearchRoute = SearchRouteImport.update({
+  id: '/search',
+  path: '/search',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ArchivedRoute = ArchivedRouteImport.update({
+  id: '/archived',
+  path: '/archived',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TagsIndexRoute = TagsIndexRouteImport.update({
+  id: '/tags/',
+  path: '/tags/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotesIndexRoute = NotesIndexRouteImport.update({
+  id: '/notes/',
+  path: '/notes/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TagsTagRoute = TagsTagRouteImport.update({
+  id: '/tags/$tag',
+  path: '/tags/$tag',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotesNoteIdRoute = NotesNoteIdRouteImport.update({
+  id: '/notes/$noteId',
+  path: '/notes/$noteId',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoStartServerFuncsRoute = DemoStartServerFuncsRouteImport.update({
@@ -61,6 +97,12 @@ const DemoStartSsrDataOnlyRoute = DemoStartSsrDataOnlyRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/archived': typeof ArchivedRoute
+  '/search': typeof SearchRoute
+  '/notes/$noteId': typeof NotesNoteIdRoute
+  '/tags/$tag': typeof TagsTagRoute
+  '/notes': typeof NotesIndexRoute
+  '/tags': typeof TagsIndexRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
@@ -71,6 +113,12 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/archived': typeof ArchivedRoute
+  '/search': typeof SearchRoute
+  '/notes/$noteId': typeof NotesNoteIdRoute
+  '/tags/$tag': typeof TagsTagRoute
+  '/notes': typeof NotesIndexRoute
+  '/tags': typeof TagsIndexRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
@@ -82,6 +130,12 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/archived': typeof ArchivedRoute
+  '/search': typeof SearchRoute
+  '/notes/$noteId': typeof NotesNoteIdRoute
+  '/tags/$tag': typeof TagsTagRoute
+  '/notes/': typeof NotesIndexRoute
+  '/tags/': typeof TagsIndexRoute
   '/demo/api/names': typeof DemoApiNamesRoute
   '/demo/start/api-request': typeof DemoStartApiRequestRoute
   '/demo/start/server-funcs': typeof DemoStartServerFuncsRoute
@@ -94,6 +148,12 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/archived'
+    | '/search'
+    | '/notes/$noteId'
+    | '/tags/$tag'
+    | '/notes'
+    | '/tags'
     | '/demo/api/names'
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
@@ -104,6 +164,12 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/archived'
+    | '/search'
+    | '/notes/$noteId'
+    | '/tags/$tag'
+    | '/notes'
+    | '/tags'
     | '/demo/api/names'
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
@@ -114,6 +180,12 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/archived'
+    | '/search'
+    | '/notes/$noteId'
+    | '/tags/$tag'
+    | '/notes/'
+    | '/tags/'
     | '/demo/api/names'
     | '/demo/start/api-request'
     | '/demo/start/server-funcs'
@@ -125,6 +197,12 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ArchivedRoute: typeof ArchivedRoute
+  SearchRoute: typeof SearchRoute
+  NotesNoteIdRoute: typeof NotesNoteIdRoute
+  TagsTagRoute: typeof TagsTagRoute
+  NotesIndexRoute: typeof NotesIndexRoute
+  TagsIndexRoute: typeof TagsIndexRoute
   DemoApiNamesRoute: typeof DemoApiNamesRoute
   DemoStartApiRequestRoute: typeof DemoStartApiRequestRoute
   DemoStartServerFuncsRoute: typeof DemoStartServerFuncsRoute
@@ -136,11 +214,53 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/archived': {
+      id: '/archived'
+      path: '/archived'
+      fullPath: '/archived'
+      preLoaderRoute: typeof ArchivedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tags/': {
+      id: '/tags/'
+      path: '/tags'
+      fullPath: '/tags'
+      preLoaderRoute: typeof TagsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notes/': {
+      id: '/notes/'
+      path: '/notes'
+      fullPath: '/notes'
+      preLoaderRoute: typeof NotesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tags/$tag': {
+      id: '/tags/$tag'
+      path: '/tags/$tag'
+      fullPath: '/tags/$tag'
+      preLoaderRoute: typeof TagsTagRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notes/$noteId': {
+      id: '/notes/$noteId'
+      path: '/notes/$noteId'
+      fullPath: '/notes/$noteId'
+      preLoaderRoute: typeof NotesNoteIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo/start/server-funcs': {
@@ -197,6 +317,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ArchivedRoute: ArchivedRoute,
+  SearchRoute: SearchRoute,
+  NotesNoteIdRoute: NotesNoteIdRoute,
+  TagsTagRoute: TagsTagRoute,
+  NotesIndexRoute: NotesIndexRoute,
+  TagsIndexRoute: TagsIndexRoute,
   DemoApiNamesRoute: DemoApiNamesRoute,
   DemoStartApiRequestRoute: DemoStartApiRequestRoute,
   DemoStartServerFuncsRoute: DemoStartServerFuncsRoute,

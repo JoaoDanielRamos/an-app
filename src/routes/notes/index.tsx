@@ -2,7 +2,7 @@ import Note from "@/components/Note";
 import { getActiveNotes } from "@/data/demo.notes";
 import { createFileRoute } from "@tanstack/react-router";
 
-export const Route = createFileRoute("/")({
+export const Route = createFileRoute("/notes/")({
   component: Home,
   loader: async () => await getActiveNotes(),
 });
