@@ -37,7 +37,7 @@ const items = [
 
 export default function MobileNavigation() {
   return (
-    <div className="fixed right-0 bottom-0 left-0 z-100 flex justify-around border-gray-200 border-t bg-white/90 px-4 py-3 [view-transition-name:mobile-nav]">
+    <div className="fixed right-0 bottom-0 left-0 z-100 flex justify-around border-gray-200 border-t bg-white/65 px-4 py-3 backdrop-blur-xs [view-transition-name:mobile-nav]">
       {items.map((item) => (
         <Link
           key={item.href}

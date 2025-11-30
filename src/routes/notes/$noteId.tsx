@@ -1,4 +1,5 @@
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { getNoteById } from "@/data/demo.notes";
 import { createFileRoute } from "@tanstack/react-router";
@@ -20,6 +21,8 @@ function RouteComponent() {
   const note = Route.useLoaderData();
   const [title, setTitle] = useState(note?.title);
   const [content, setContent] = useState(note?.content);
+  const [tags, setTags] = useState(note?.tags);
+  const [isTagsEditing, setIsTagsEditing] = useState(false);
 
   return (
     <div className="space-y-2 p-4">
@@ -36,24 +39,34 @@ function RouteComponent() {
         {title}
       </Textarea>
 
-      <div className="flex gap-2">
-        {note?.tags.map((tag: string) => (
-          <Badge
-            key={tag}
-            variant="outline"
-            className="rounded-sm bg-zinc-200 font-semibold text-zinc-600"
-          >
-            {tag}
-          </Badge>
-        ))}
+      <div className="rounded-md transition-all duration-300 focus-within:border focus-within:p-2">
+        <div className="flex flex-wrap gap-2">
+          {tags.map((tag: string) => (
+            <Badge
+              key={tag}
+              variant="outline"
+              className="rounded-sm bg-zinc-200 font-semibold text-zinc-600"
+            >
+              {tag}
+            </Badge>
+          ))}
+        </div>
+        <Input
+          placeholder="Add a tag"
+          className="border-none not-focus-visible:opacity-0 focus-visible:ring-0"
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              setTags([...tags, e.target.value]);
+              e.target.value = "";
+            }
+          }}
+        />
       </div>
 
       <Textarea
         className="border-none p-0 text-gray-500 text-sm transition-all duration-300 focus-visible:bg-stone-100 focus-visible:p-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-offset-0"
         value={content}
-        onChange={(e) => {
-          setContent(e.target.value);
-        }}
+        onChange={(e) => setContent(e.target.value)}
       />
     </div>
   );
