@@ -56,16 +56,16 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         </main>
         <MobileNavigation />
         {/* <TanStackDevtools
-					config={{
-						position: "bottom-right",
-					}}
-					plugins={[
-						{
-							name: "Tanstack Router",
-							render: <TanStackRouterDevtoolsPanel />,
-						},
-					]}
-				/> */}
+          config={{
+            position: "bottom-right",
+          }}
+          plugins={[
+            {
+              name: "Tanstack Router",
+              render: <TanStackRouterDevtoolsPanel />,
+            },
+          ]}
+        /> */}
         <Scripts />
       </body>
     </html>

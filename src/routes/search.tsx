@@ -15,7 +15,7 @@ function Search() {
   const [searchInputValue, setSearchInput] = useState("");
   const notes = Route.useLoaderData();
 
-  const filteredNotes = notes.filter((note) => {
+  const filteredNotes = notes.filter((note: NoteType) => {
     return (
       note.title.toLowerCase().includes(searchInputValue.toLowerCase()) ||
       note.content.toLowerCase().includes(searchInputValue.toLowerCase()) ||

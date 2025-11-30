@@ -8,7 +8,7 @@ export default function Note({ note }: { note: NoteType }) {
   const title = <h2 className="font-bold">{note.title}</h2>;
 
   const tags = (
-    <div className="flex gap-1">
+    <div className="flex gap-[0.3rem]">
       {note.tags.map((tag) => (
         <Tag key={tag} tag={tag} />
       ))}
@@ -53,7 +53,9 @@ export function Tag({ tag }: { tag: string }) {
       key={tag}
       viewTransition={{ types: ["slide-left"] }}
     >
-      <Badge className="rounded-sm bg-zinc-200 text-zinc-600">{tag}</Badge>
+      <Badge className="rounded-sm bg-zinc-200 font-semibold text-zinc-600">
+        {tag}
+      </Badge>
     </Link>
   );
 }
