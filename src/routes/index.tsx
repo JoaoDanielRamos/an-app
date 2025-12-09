@@ -3,11 +3,11 @@ import { getActiveNotes } from "@/data/demo.notes";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
-  component: Home,
+  component: RouteComponent,
   loader: async () => await getActiveNotes(),
 });
 
-function Home() {
+function RouteComponent() {
   const notes = Route.useLoaderData();
 
   return (

@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SearchRouteImport } from './routes/search'
 import { Route as ArchivedRouteImport } from './routes/archived'
 import { Route as IndexRouteImport } from './routes/index'
@@ -24,6 +25,11 @@ import { Route as DemoStartSsrSpaModeRouteImport } from './routes/demo/start.ssr
 import { Route as DemoStartSsrFullSsrRouteImport } from './routes/demo/start.ssr.full-ssr'
 import { Route as DemoStartSsrDataOnlyRouteImport } from './routes/demo/start.ssr.data-only'
 
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SearchRoute = SearchRouteImport.update({
   id: '/search',
   path: '/search',
@@ -99,6 +105,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/archived': typeof ArchivedRoute
   '/search': typeof SearchRoute
+  '/settings': typeof SettingsRoute
   '/notes/$noteId': typeof NotesNoteIdRoute
   '/tags/$tag': typeof TagsTagRoute
   '/notes': typeof NotesIndexRoute
@@ -115,6 +122,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/archived': typeof ArchivedRoute
   '/search': typeof SearchRoute
+  '/settings': typeof SettingsRoute
   '/notes/$noteId': typeof NotesNoteIdRoute
   '/tags/$tag': typeof TagsTagRoute
   '/notes': typeof NotesIndexRoute
@@ -132,6 +140,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/archived': typeof ArchivedRoute
   '/search': typeof SearchRoute
+  '/settings': typeof SettingsRoute
   '/notes/$noteId': typeof NotesNoteIdRoute
   '/tags/$tag': typeof TagsTagRoute
   '/notes/': typeof NotesIndexRoute
@@ -150,6 +159,7 @@ export interface FileRouteTypes {
     | '/'
     | '/archived'
     | '/search'
+    | '/settings'
     | '/notes/$noteId'
     | '/tags/$tag'
     | '/notes'
@@ -166,6 +176,7 @@ export interface FileRouteTypes {
     | '/'
     | '/archived'
     | '/search'
+    | '/settings'
     | '/notes/$noteId'
     | '/tags/$tag'
     | '/notes'
@@ -182,6 +193,7 @@ export interface FileRouteTypes {
     | '/'
     | '/archived'
     | '/search'
+    | '/settings'
     | '/notes/$noteId'
     | '/tags/$tag'
     | '/notes/'
@@ -199,6 +211,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ArchivedRoute: typeof ArchivedRoute
   SearchRoute: typeof SearchRoute
+  SettingsRoute: typeof SettingsRoute
   NotesNoteIdRoute: typeof NotesNoteIdRoute
   TagsTagRoute: typeof TagsTagRoute
   NotesIndexRoute: typeof NotesIndexRoute
@@ -214,6 +227,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/search': {
       id: '/search'
       path: '/search'
@@ -319,6 +339,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ArchivedRoute: ArchivedRoute,
   SearchRoute: SearchRoute,
+  SettingsRoute: SettingsRoute,
   NotesNoteIdRoute: NotesNoteIdRoute,
   TagsTagRoute: TagsTagRoute,
   NotesIndexRoute: NotesIndexRoute,

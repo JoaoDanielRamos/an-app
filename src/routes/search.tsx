@@ -7,11 +7,11 @@ import { SearchIcon } from "lucide-react";
 import { useState } from "react";
 
 export const Route = createFileRoute("/search")({
-  component: Search,
+  component: RouteComponent,
   loader: async () => await getAllNotes(),
 });
 
-function Search() {
+function RouteComponent() {
   const [searchInputValue, setSearchInput] = useState("");
   const notes = Route.useLoaderData();
 
