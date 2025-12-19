@@ -1,19 +1,21 @@
+import RichTextEditor from "@/components/RichTextEditor";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { getNoteById } from "@/data/demo.notes";
+import type { Note } from "@/types/note";
 import { createFileRoute } from "@tanstack/react-router";
 import { format } from "date-fns";
 import { useState } from "react";
 
 export const Route = createFileRoute("/notes/$noteId")({
   component: RouteComponent,
-  loader: async ({ params }: { params: { noteId: string } }) => {
+  loader: async ({ params }): Promise<Note> => {
     const note = await getNoteById({ data: params.noteId });
     if (!note) {
       throw new Error("Note not found");
     }
-    return note;
+    return note;d
   },
 });
 
@@ -56,17 +58,19 @@ function RouteComponent() {
           className="border-none not-focus-visible:opacity-0 focus-visible:ring-0"
           onKeyDown={(e) => {
             if (e.key === "Enter") {
-              setTags([...tags, e.target.value]);
-              e.target.value = "";
+              const target = e.currentTarget;
+              setTags([...tags, target.value]);
+              target.value = "";
             }
           }}
         />
       </div>
 
-      <Textarea
-        className="border-none p-0 text-gray-500 text-sm transition-all duration-300 focus-visible:bg-stone-100 focus-visible:p-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-offset-0"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
+      <RichTextEditor
+        content={content}
+        onChange={setContent}
+        placeholder="Write your note..."
+        className="-mx-4 border-none"
       />
     </div>
   );

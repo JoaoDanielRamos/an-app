@@ -1,3 +1,4 @@
+import CreateNote from "@/components/CreateNote";
 import Header from "@/components/Layout/Header";
 import MobileNavigation from "@/components/Layout/MobileNavigation";
 import NotFound from "@/components/Layout/NotFound";
@@ -74,6 +75,8 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <SignedOut>
             <RedirectToSignIn />
           </SignedOut>
+
+          <CreateNote />
         </ClerkProvider>
 
         <Scripts />

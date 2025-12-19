@@ -10,6 +10,14 @@ export const Route = createFileRoute("/")({
 function RouteComponent() {
   const notes = Route.useLoaderData();
 
+  if (notes.length <= 0) {
+    return (
+      <div>
+        <p>Notes not found</p>
+      </div>
+    );
+  }
+
   return (
     <div className="divide-y">
       {notes.map((note) => (
