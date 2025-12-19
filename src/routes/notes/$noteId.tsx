@@ -22,7 +22,7 @@ function RouteComponent() {
   const [title, setTitle] = useState(note?.title);
   const [content, setContent] = useState(note?.content);
   const [tags, setTags] = useState(note?.tags);
-  const [isTagsEditing, setIsTagsEditing] = useState(false);
+  const [_isTagsEditing, _setIsTagsEditing] = useState(false);
 
   return (
     <div className="space-y-2 p-4">

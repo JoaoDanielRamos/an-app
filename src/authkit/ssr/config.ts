@@ -6,7 +6,7 @@ type ValueSource = Record<string, any> | ((key: string) => any);
 /**
  * Default environment variable source that uses process.env
  */
-const defaultSource: ValueSource = (key: string): string | undefined => {
+const _defaultSource: ValueSource = (key: string): string | undefined => {
   try {
     return process.env[key];
   } catch {
@@ -30,8 +30,6 @@ export class Configuration {
     cookieMaxAge: 60 * 60 * 24 * 400,
     apiHostname: "api.workos.com",
   };
-
-  private valueSource: ValueSource = defaultSource;
 
   private readonly requiredKeys: Array<keyof AuthKitConfig> = [
     "clientId",
@@ -79,7 +77,7 @@ export class Configuration {
   getValue<T extends keyof AuthKitConfig>(key: T): AuthKitConfig[T] {
     // First check environment variables
     const envKey = this.getEnvironmentVariableName(key);
-    let envValue: AuthKitConfig[T] | undefined = undefined;
+    let envValue: AuthKitConfig[T] | undefined;
 
     const { valueSource, config } = this;
     if (typeof valueSource === "function") {
@@ -100,14 +98,14 @@ export class Configuration {
         typeof envValue === "string"
       ) {
         const num = parseInt(envValue, 10);
-        return (isNaN(num) ? undefined : num) as AuthKitConfig[T];
+        return (Number.isNaN(num) ? undefined : num) as AuthKitConfig[T];
       }
 
       return envValue as AuthKitConfig[T];
     }
 
     // Then check programmatically provided config
-    if (key in config && config[key] != undefined) {
+    if (key in config && config[key] !== undefined) {
       return config[key] as AuthKitConfig[T];
     }
 
