@@ -17,6 +17,7 @@ import { Route as TagsIndexRouteImport } from './routes/tags/index'
 import { Route as NotesIndexRouteImport } from './routes/notes/index'
 import { Route as TagsTagRouteImport } from './routes/tags/$tag'
 import { Route as NotesNoteIdRouteImport } from './routes/notes/$noteId'
+import { Route as ApiWebhooksRouteImport } from './routes/api/webhooks'
 import { Route as DemoStartServerFuncsRouteImport } from './routes/demo/start.server-funcs'
 import { Route as DemoStartApiRequestRouteImport } from './routes/demo/start.api-request'
 import { Route as DemoApiNamesRouteImport } from './routes/demo/api.names'
@@ -65,6 +66,11 @@ const NotesNoteIdRoute = NotesNoteIdRouteImport.update({
   path: '/notes/$noteId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiWebhooksRoute = ApiWebhooksRouteImport.update({
+  id: '/api/webhooks',
+  path: '/api/webhooks',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DemoStartServerFuncsRoute = DemoStartServerFuncsRouteImport.update({
   id: '/demo/start/server-funcs',
   path: '/demo/start/server-funcs',
@@ -106,6 +112,7 @@ export interface FileRoutesByFullPath {
   '/archived': typeof ArchivedRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRoute
+  '/api/webhooks': typeof ApiWebhooksRoute
   '/notes/$noteId': typeof NotesNoteIdRoute
   '/tags/$tag': typeof TagsTagRoute
   '/notes': typeof NotesIndexRoute
@@ -123,6 +130,7 @@ export interface FileRoutesByTo {
   '/archived': typeof ArchivedRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRoute
+  '/api/webhooks': typeof ApiWebhooksRoute
   '/notes/$noteId': typeof NotesNoteIdRoute
   '/tags/$tag': typeof TagsTagRoute
   '/notes': typeof NotesIndexRoute
@@ -141,6 +149,7 @@ export interface FileRoutesById {
   '/archived': typeof ArchivedRoute
   '/search': typeof SearchRoute
   '/settings': typeof SettingsRoute
+  '/api/webhooks': typeof ApiWebhooksRoute
   '/notes/$noteId': typeof NotesNoteIdRoute
   '/tags/$tag': typeof TagsTagRoute
   '/notes/': typeof NotesIndexRoute
@@ -160,6 +169,7 @@ export interface FileRouteTypes {
     | '/archived'
     | '/search'
     | '/settings'
+    | '/api/webhooks'
     | '/notes/$noteId'
     | '/tags/$tag'
     | '/notes'
@@ -177,6 +187,7 @@ export interface FileRouteTypes {
     | '/archived'
     | '/search'
     | '/settings'
+    | '/api/webhooks'
     | '/notes/$noteId'
     | '/tags/$tag'
     | '/notes'
@@ -194,6 +205,7 @@ export interface FileRouteTypes {
     | '/archived'
     | '/search'
     | '/settings'
+    | '/api/webhooks'
     | '/notes/$noteId'
     | '/tags/$tag'
     | '/notes/'
@@ -212,6 +224,7 @@ export interface RootRouteChildren {
   ArchivedRoute: typeof ArchivedRoute
   SearchRoute: typeof SearchRoute
   SettingsRoute: typeof SettingsRoute
+  ApiWebhooksRoute: typeof ApiWebhooksRoute
   NotesNoteIdRoute: typeof NotesNoteIdRoute
   TagsTagRoute: typeof TagsTagRoute
   NotesIndexRoute: typeof NotesIndexRoute
@@ -283,6 +296,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NotesNoteIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/webhooks': {
+      id: '/api/webhooks'
+      path: '/api/webhooks'
+      fullPath: '/api/webhooks'
+      preLoaderRoute: typeof ApiWebhooksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/demo/start/server-funcs': {
       id: '/demo/start/server-funcs'
       path: '/demo/start/server-funcs'
@@ -340,6 +360,7 @@ const rootRouteChildren: RootRouteChildren = {
   ArchivedRoute: ArchivedRoute,
   SearchRoute: SearchRoute,
   SettingsRoute: SettingsRoute,
+  ApiWebhooksRoute: ApiWebhooksRoute,
   NotesNoteIdRoute: NotesNoteIdRoute,
   TagsTagRoute: TagsTagRoute,
   NotesIndexRoute: NotesIndexRoute,

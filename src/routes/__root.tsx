@@ -2,7 +2,9 @@ import Header from "@/components/Layout/Header";
 import MobileNavigation from "@/components/Layout/MobileNavigation";
 import NotFound from "@/components/Layout/NotFound";
 import appCss from "@/styles/app.css?url";
+import { RedirectToSignIn, SignedIn, SignedOut } from "@clerk/clerk-react";
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import ClerkProvider from "../integrations/clerk/provider";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -50,12 +52,14 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <Header />
-        <main className="[view-transition-name:main-content] max-lg:pb-16">
-          {children}
-        </main>
-        <MobileNavigation />
-        {/* <TanStackDevtools
+        <ClerkProvider>
+          <SignedIn>
+            <Header />
+            <main className="[view-transition-name:main-content] max-lg:pb-16">
+              {children}
+            </main>
+            <MobileNavigation />
+            {/* <TanStackDevtools
           config={{
             position: "bottom-right",
           }}
@@ -66,6 +70,12 @@ function RootDocument({ children }: { children: React.ReactNode }) {
             },
           ]}
         /> */}
+          </SignedIn>
+          <SignedOut>
+            <RedirectToSignIn />
+          </SignedOut>
+        </ClerkProvider>
+
         <Scripts />
       </body>
     </html>

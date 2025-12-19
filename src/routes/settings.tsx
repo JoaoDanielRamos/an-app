@@ -17,6 +17,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { SignOutButton } from "@clerk/clerk-react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { createFileRoute } from "@tanstack/react-router";
 import { useTheme } from "next-themes";
@@ -337,6 +338,12 @@ function RouteComponent() {
         >
           <DeleteDataForm />
         </SettingsItem>
+
+        <div className="py-3">
+          <Button className="mx-auto block w-fit">
+            <SignOutButton />
+          </Button>
+        </div>
       </div>
     </div>
   );
